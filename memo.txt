@@ -1,0 +1,8 @@
+window class code :
+window class :
+instance : 
+
+property : 0x30(?)
+
+command
+ipaddr : ****** : EPC : property
