@@ -11,9 +11,7 @@ def main(ipaddr):
             child.sendline("150.65.230.114:029000:0x80,0x31")
             child.expect("OK,150.65.230.114:029003:0x80")
         else:
-            child.sendline("^[")
-            child.expect("telnet> ")
-            child.sendline("q")
+            break
 
 if __name__ == '__main__':          # importされないときだけmain()を呼ぶ
     main("150.65.230.91")
