@@ -24,7 +24,9 @@ def on_disconnect(client, userdata, flag, rc):
 
 def on_message(client, userdata, msg):
   print("Data = " + str(msg.payload.decode()))
-  if (int(msg.payload.decode()) >= 900):
+  if(int(msg.payload.decode()) == 0):
+    print("sensor data missing...")
+  elif (int(msg.payload.decode()) >= 900):
     print("high")
     pub("150.65.230.91", "0")
   elif (int(msg.payload.decode()) < 900):
