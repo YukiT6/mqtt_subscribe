@@ -1,5 +1,4 @@
 import paho.mqtt.client as mqtt
-import pexpect
 import socket
 import time
 
@@ -49,7 +48,7 @@ def send_socket(num):
   elif(num == 1):
     print("Light OFF\n")
     sendline = b"150.65.230.114:029000:0x80,0x31\n"
-  s.send(sendline)
+  s.sendall(sendline)
   s.close()
 
 

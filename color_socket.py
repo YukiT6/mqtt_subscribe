@@ -29,11 +29,11 @@ while True:
         break
     count += 1
     Color = get_rand_str_Hex(6)
-    s.send((sendline1 + str(get_rand_str_Hex(6)) + "\n").encode())
-    time.sleep(1)
-    s.send((sendline2 + str(get_rand_str_Hex(6)) + "\n").encode())
-    time.sleep(1)
-    s.send((sendline3 + str(get_rand_str_Hex(6)) + "\n").encode())
+    s.sendall((sendline1 + str(get_rand_str_Hex(6)) + "\n").encode())
+    time.sleep(0.5)
+    s.sendall((sendline2 + str(get_rand_str_Hex(6)) + "\n").encode())
+    time.sleep(0.5)
+    s.sendall((sendline3 + str(get_rand_str_Hex(6)) + "\n").encode())
 
-    time.sleep(1)
+    time.sleep(0.5)
 print("Finish!")
