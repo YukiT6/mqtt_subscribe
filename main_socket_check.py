@@ -44,13 +44,13 @@ def on_message(client, userdata, msg):
     if(int(msg.payload.decode()) == 0):
       print("sensor data missing...")
 
-    elif (int(msg.payload.decode()) > 900):
+    elif (int(msg.payload.decode()) >= 900):
       if(flag == 0):
         print("high")
         flag= 1
         send_socket(0)
 
-      elif (int(msg.payload.decode()) < 800):
+      elif (int(msg.payload.decode()) < 900):
         if(flag == 1):
           print("Low")
           flag = 0
@@ -68,11 +68,11 @@ def send_socket(num):
   if (num == 0):
     print("Light ON\n")
     pub(num)
-    sendline = b"192.168.1.5:026500:0xE0,0x41\n"
+    sendline = b"150.65.230.114:029000:0x80,0x30\n"
   elif(num == 1):
     print("Light OFF\n")
     pub(num)
-    sendline = b"192.168.1.5:026500:0xE0,0x42\n"
+    sendline = b"150.65.230.114:029000:0x80,0x31\n"
   s.sendall(sendline)
   s.close()
 
